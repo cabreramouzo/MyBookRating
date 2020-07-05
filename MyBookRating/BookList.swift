@@ -9,12 +9,39 @@
 import SwiftUI
 
 struct BookList: View {
-    var books : [Book] = [Book(), Book(), Book()]
+    @State var showBookDetailView = false
+    
+    @ObservedObject var bookStore = BookStore()
+
+    
     var body: some View {
-        List(books) { b in
-            Text(b.title)
+        NavigationView {
+                List {
+                    //recorremos los libros
+                    ForEach(bookStore.books){ b in
+                        NavigationLink(b.title, destination: ContentView(book: b, bookStore: self.bookStore))
+                    }
+                    
+                }
+                .navigationBarTitle("Mis Libros")
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        self.showBookDetailView.toggle()
+                    }) {
+                        Image(systemName: "plus")
+                            .font(Font.system(.title))
+                    }
+            )
+            
+            
+        }.sheet(isPresented: $showBookDetailView) {
+            ContentView(book: Book(), bookStore: self.bookStore)
         }
+        
     }
+        
+    
+    
 }
 
 struct BookList_Previews: PreviewProvider {
