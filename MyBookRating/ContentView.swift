@@ -9,9 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var title: String = ""
-    @State var rating = 3.0
-    @State var read: Bool = true
+    //Vinculos (bindings) a variables locales
+    @State var book: Book
  
     var body: some View {
 
@@ -19,7 +18,7 @@ struct ContentView: View {
             Section {
                 VStack(alignment: .leading) {
                     TitleDetail(title: "Título")
-                    TextField("Finanzas para frikis", text: $title)
+                    TextField("Finanzas para frikis", text: $book.title)
                     
                 }
             }
@@ -28,16 +27,16 @@ struct ContentView: View {
                     TitleDetail(title: "Valoración")
                     HStack() {
                         Spacer()
-                        Text(String(repeating: "⭐️", count: Int(rating)))
+                        Text(String(repeating: "⭐️", count: Int(book.rating)))
                         Spacer()
                     }
-                    Slider(value: $rating, in: 1...5, step: 1)
+                    Slider(value: $book.rating, in: 1.0...5.0, step: 1.0)
                     
                 }
                 
             }
             Section {
-                Toggle(isOn: $read) {
+                Toggle(isOn: $book.read) {
                     Text("Lo he leído")
                 }
                 .accentColor(/*@START_MENU_TOKEN@*/.yellow/*@END_MENU_TOKEN@*/)
@@ -69,7 +68,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(book: Book())
     }
 }
 

@@ -14,6 +14,8 @@
 		04B46BEF24B228D400F343FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B46BEE24B228D400F343FB /* Assets.xcassets */; };
 		04B46BF224B228D400F343FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B46BF124B228D400F343FB /* Preview Assets.xcassets */; };
 		04B46BF524B228D400F343FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B46BF324B228D400F343FB /* LaunchScreen.storyboard */; };
+		04B46BFD24B24EAB00F343FB /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B46BFC24B24EAB00F343FB /* Book.swift */; };
+		04B46BFF24B24F4700F343FB /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B46BFE24B24F4700F343FB /* BookList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		04B46BF124B228D400F343FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04B46BF424B228D400F343FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B46BF624B228D400F343FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B46BFC24B24EAB00F343FB /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		04B46BFE24B24F4700F343FB /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 		04B46BE424B228CF00F343FB /* MyBookRating */ = {
 			isa = PBXGroup;
 			children = (
+				04B46BFE24B24F4700F343FB /* BookList.swift */,
+				04B46BFC24B24EAB00F343FB /* Book.swift */,
 				04B46BE524B228CF00F343FB /* AppDelegate.swift */,
 				04B46BE724B228CF00F343FB /* SceneDelegate.swift */,
 				04B46BEC24B228CF00F343FB /* ContentView.swift */,
@@ -149,9 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B46BFF24B24F4700F343FB /* BookList.swift in Sources */,
 				04B46BE624B228CF00F343FB /* AppDelegate.swift in Sources */,
 				04B46BE824B228CF00F343FB /* SceneDelegate.swift in Sources */,
 				04B46BED24B228CF00F343FB /* ContentView.swift in Sources */,
+				04B46BFD24B24EAB00F343FB /* Book.swift in Sources */,
 				04B46BEB24B228CF00F343FB /* MyBookRating.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
